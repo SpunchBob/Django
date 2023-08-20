@@ -17,6 +17,9 @@ class Advertisement(models.Model):
             created_time = self.created_at.time().strftime("%H:%M")
             return f"Сегодня в {created_time}"
         return self.created_at
+    
+    def __str__(self):
+        return f"id={self.id}, title={self.title}, price={self.price}"
 
 class Meta:
     db_table = "advertisements"
